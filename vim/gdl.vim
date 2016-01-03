@@ -1,0 +1,1 @@
+/home/mhohmann/.vim/syntax/gdl.vim
