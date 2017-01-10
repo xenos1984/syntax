@@ -120,36 +120,91 @@ syntax keyword mmaCNMisc contained AliasDelimiter AliasIndicator CheckedBox Copy
 " Keywords:
 syntax keyword mmaKeyConstant Pi E I EulerGamma GoldenRatio GoldenAngle Catalan Glaisher Khinchin Infinity
 
-syntax keyword mmaKeyArith Plus Subtract Times Divide Power
+syntax keyword mmaKeyArith Plus Subtract Times Divide Power Sum Product
 
-syntax keyword mmaKeyElemFunc Exp Log Log2 Log10 Sqrt CubeRoot Surd
+syntax keyword mmaKeyElemFunc Exp Log Log2 Log10 Sqrt CubeRoot Surd Conjugate Abs Arg Min Max
 syntax keyword mmaKeyElemFunc Sin Cos Tan Csc Sec Cot ArcSin ArcCos ArcTan ArcCsc ArcSec ArcCot Sinc Degree
 syntax keyword mmaKeyElemFunc Sinh Cosh Tanh Csch Sech Coth ArcSinh ArcCosh ArcTanh ArcCsch ArcSech ArcCoth
 
-syntax keyword mmaKeySpecFunc Gamma Beta PolyGamma LogGamma Factorial Factorial2 Pochhammer Binomial Subfactorial FactorialPower Hyperfactorial GammaRegularized BetaRegularized InverseGammaRegularized InverseBetaRegularized BarnesG LogBarnesG
+syntax keyword mmaKeySpecFunc Gamma Beta PolyGamma LogGamma Pochhammer GammaRegularized BetaRegularized InverseGammaRegularized InverseBetaRegularized BarnesG LogBarnesG
 syntax keyword mmaKeySpecFunc Erf Erfc Erfi InverseErf InverseErfc DawsonF ExpIntegralE ExpIntegralEi LogIntegral FresnelS FresnelC FresnelF FresnelG SinIntegral CosIntegral SinhIntegral CoshIntegral
 syntax keyword mmaKeySpecFunc HermiteH LaguerreL JacobiP GegenbauerC ChebyshevT ChebyshevU ZernikeR SphericalHarmonicY WignerD LegendreP LegendreQ
 syntax keyword mmaKeySpecFunc BesselJ BesselY BesselI BesselK SphericalBesselJ SphericalBesselY HankelH1 HankelH2 SphericalHankelH1 SphericalHankelH2 AiryAi AiryAiPrime AiryBi AiryBiPrime ScorerGi ScorerGiPrime ScorerHi ScorerHiPrime KelvinBer KelvinBei KelvinKer KelvinKei StruveH StruveL AngerJ WeberE BesselJZero BesselYZero AiryAiZero AiryBiZero
 syntax keyword mmaKeySpecFunc Hypergeometric2F1 HypergeometricPFQ MeijerG Hypergeometric1F1 HypergeometricU WhittakerM WhittakerW ParabolicCylinderD Hypergeometric0F1 Hypergeometric2F1Regularized HypergeometricPFQRegularized Hypergeometric1F1Regularized Hypergeometric0F1Regularized AppellF1
-syntax keyword mmaKeySpecFunc EllipticK EllipticF EllipticE EllipticPi JacobiZeta ArithmeticGeometricMean InverseWeierstrassP EllipticNomeQ InverseEllipticNomeQ JacobiAmplitude
-syntax keyword mmaKeySpecFunc JacobiSN JacobiCN JacobiDN JacobiCD JacobiCS JacobiDC JacobiDS JacobiNC JacobiND JacobiNS JacobiSC JacobiSD InverseJacobiSN InverseJacobiCN InverseJacobiDN InverseJacobiCD InverseJacobiCS InverseJacobiDC InverseJacobiDS InverseJacobiNC InverseJacobiND  InverseJacobiNS InverseJacobiSC InverseJacobiSD WeierstrassP WeierstrassPPrime WeierstrassSigma WeierstrassZeta InverseWeierstrassP EllipticTheta EllipticThetaPrime SiegelTheta NevilleThetaC NevilleThetaD NevilleThetaN NevilleThetaS EllipticExp EllipticExpPrime EllipticLog
+syntax keyword mmaKeySpecFunc EllipticK EllipticF EllipticE EllipticPi JacobiZeta ArithmeticGeometricMean EllipticNomeQ InverseEllipticNomeQ JacobiAmplitude
+syntax keyword mmaKeySpecFunc JacobiSN JacobiCN JacobiDN JacobiCD JacobiCS JacobiDC JacobiDS JacobiNC JacobiND JacobiNS JacobiSC JacobiSD InverseJacobiSN InverseJacobiCN InverseJacobiDN InverseJacobiCD InverseJacobiCS InverseJacobiDC InverseJacobiDS InverseJacobiNC InverseJacobiND InverseJacobiNS InverseJacobiSC InverseJacobiSD WeierstrassP WeierstrassPPrime WeierstrassSigma WeierstrassZeta InverseWeierstrassP EllipticTheta EllipticThetaPrime NevilleThetaC NevilleThetaD NevilleThetaN NevilleThetaS EllipticExp EllipticExpPrime EllipticLog
 syntax keyword mmaKeySpecFunc DedekindEta KleinInvariantJ ModularLambda SiegelTheta MittagLefflerE
 syntax keyword mmaKeySpecFunc Zeta RiemannSiegelZ RiemannSiegelTheta StieltjesGamma RiemannXi ZetaZero PolyLog LerchPhi HurwitzZeta HurwitzLerchPhi DirichletBeta DirichletEta DirichletLambda PrimeZetaP
 syntax keyword mmaKeySpecFunc MathieuS MathieuC MathieuSPrime MathieuCPrime MathieuCharacteristicA MathieuCharacteristicB MathieuCharacteristicExponent
 syntax keyword mmaKeySpecFunc SpheroidalPS SpheroidalQS SpheroidalPSPrime SpheroidalQSPrime SpheroidalS1 SpheroidalS2 SpheroidalS1Prime SpheroidalS2Prime SpheroidalEigenvalue SpheroidalJoiningFactor SpheroidalRadialFactor
 syntax keyword mmaKeySpecFunc QPochhammer QFactorial QBinomial QGamma QHypergeometricPFQ QPolyGamma
 
-syntax keyword mmaKeyBoolean And Or Not Nand Nor Xor Xnor Equivalent Implies True False Boole
+syntax keyword mmaKeyCombin Factorial Subfactorial FactorialPower Hyperfactorial Factorial2 Binomial Multinomial CatalanNumber PolygonalNumber StirlingS1 StirlingS2 PartitionsP PartitionsQ BellB BellY FrobeniusNumber FiniteGroupCount FiniteAbelianGroupCount ClebschGordan ThreeJSymbol SixJSymbol
 
-syntax keyword mmaKeyList List Part Span Table Array First Last Rest Most Take Drop TakeDrop TakeWhile UpTo
-syntax keyword mmaKeyList Append Prepend Insert Delete AppendTo PrependTo Join Flatten
-syntax keyword mmaKeyList Length Dimensions ArrayDepth LengthWhile
+syntax keyword mmaKeyAnalysis D Derivative Integrate
+
+syntax keyword mmaKeyTest Equal Unequal SameQ UnsameQ Less Greater LessEqual GreaterEqual Between GreaterThan LessThan GreaterEqualThan LessEqualThan EqualTo UnequalTo
+syntax keyword mmaKeyTest NumberQ MachineNumberQ NumericQ IntegerQ EvenQ OddQ PrimeQ CoprimeQ AlgebraicIntegerQ Positive Negative NonPositive NonNegative PossibleZeroQ
+
+syntax keyword mmaKeyBoolean And Or Not Nand Nor Xor Xnor Equivalent Implies True False Boole AllTrue AnyTrue NoneTrue ForAll Exists
+
+syntax keyword mmaKeyList List Part Span Table Array First Last Rest Most Take Drop TakeDrop TakeWhile UpTo Sequence Range
+syntax keyword mmaKeyList Append Prepend Insert Delete AppendTo PrependTo Join Flatten Reverse Sort DeleteDuplicates
+syntax keyword mmaKeyList Length Dimensions ArrayDepth LengthWhile Signature
+syntax keyword mmaKeyList VectorQ MatrixQ ArrayQ
+syntax keyword mmaKeyList Union Intersection Complement Subsets Tuples IntersectingQ DisjointQ SubsetQ ContainsAll ContainsNone ContainsAny ContainsOnly ContainsExactly Element MemberQ FreeQ DuplicateFreeQ
+
+syntax keyword mmaKeyMatrix Dot Cross Norm Total Normalize Projection Orthogonalize Tr Det Diagonal
+syntax keyword mmaKeyMatrix IdentityMatrix DiagonalMatrix HilbertMatrix HankelMatrix ToeplitzMatrix DiskMatrix BoxMatrix CrossMatrix DiamondMatrix GaussianMatrix ShenCastanMatrix SavitzkyGolayMatrix GaborMatrix EulerMatrix RollPitchYawMatrix RotationMatrix ScalingMatrix ShearingMatrix ReflectionMatrix TransformationMatrix
+
+syntax keyword mmaKeyApply Apply Map MapIndexed MapThread MapAt Scan BlockMap ArrayFilter Thread FoldList ComposeList Outer Inner Through
 
 syntax keyword mmaKeyPlot Plot LogPlot LogLinearPlot LogLogPlot Plot3D ContourPlot ContourPlot3D SliceContourPlot3D DensityPlot DensityPlot3D SliceDensityPlot3D ParametricPlot ParametricPlot3D PolarPlot RevolutionPlot3D SphericalPlot3D NumberLinePlot RegionPlot RegionPlot3D
 syntax keyword mmaKeyPlot StreamPlot ListStreamPlot LineIntegralConvolutionPlot ListLineIntegralConvolutionPlot VectorPlot ListVectorPlot StreamDensityPlot ListStreamDensityPlot VectorDensityPlot ListVectorDensityPlot VectorPlot3D ListVectorPlot3D SliceVectorPlot3D ListSliceVectorPlot3D
 syntax keyword mmaKeyPlot ListPlot ListLinePlot ListStepPlot ListLogPlot ListLogLinearPlot ListLogLogPlot ListPolarPlot ListPlot3D ListPointPlot3D ListDensityPlot ListDensityPlot3D ListContourPlot ListContourPlot3D ListSliceDensityPlot3D ListSliceContourPlot3D ListCurvePathPlot ListSurfacePlot3D ArrayPlot ReliefPlot MatrixPlot DateListPlot DateListLogPlot TimelinePlot DateHistogram DateListStepPlot GraphPlot LayeredGraphPlot TreePlot
 
 syntax keyword mmaKeyContext BeginPackage EndPackage Begin End
+
+syntax keyword mmaKeyEval Evaluate Hold HoldForm HoldPattern HoldComplete
+
+syntax keyword mmaKeyFormat Format MakeBoxes MakeExpression ToBoxes StripBoxes
+syntax keyword mmaKeyFormat StandardForm OutputForm InputForm TraditionalForm FullForm TeXForm MathMLForm CForm FortranForm
+
+syntax keyword mmaKeyBox RowBox GridBox SuperscriptBox SubscriptBox SubsuperscriptBox OverscriptBox UnderscriptBox UnderoverscriptBox FractionBox SqrtBox RadicalBox StyleBox FrameBox AdjustmentBox FormBox InterpretationBox TagBox ErrorBox
+
+syntax keyword mmaKeyNotation Subscript Superscript Subsuperscript SubPlus SubMinus SubStar SuperPlus SuperMinus SuperStar SuperDagger Overscript Underscript Underoverscript OverBar OverVector OverTilde OverHat OverDot UnderBar
+
+syntax keyword mmaKeyStyle Style Bold Italic Plain Underlined Large Small Tiny Larger Smaller
+syntax keyword mmaKeyStyle Spacings
+
+syntax keyword mmaKeyGrid Grid TextGrid Row Column Item
+
+syntax keyword mmaKeyString ToString StringJoin StringSplit StringLength StringTake StringDrop StringInsert StringTrim StringRiffle StringExtract StringReverse StringRotateLeft StringRotateRight StringPadLeft StringPadRight StringPartition InsertLinebreaks StringPosition StringCases StringCount StringContainsQ StringFreeQ StringMatchQ StringStartsQ StringEndsQ PalindromeQ StringReplace StringReplacePart StringReplaceList
+
+syntax keyword mmaKeyTensor Arrays Matrices Vectors TensorRank TensorDimensions TensorSymmetry TensorContract TensorTranspose TensorProduct TensorWedge HodgeDual Symmetrize TensorReduce TensorExpand KroneckerDelta LeviCivitaTensor Band
+
+syntax keyword mmaKeyScope Module With Block DynamicModule
+
+syntax keyword mmaKeyAssign Set SetDelayed TagSet TagSetDelayed UpSet UpSetDelayed Unset Clear ClearAll Remove
+
+syntax keyword mmaKeySymbol Symbol SymbolName Context Names NameQ $NewSymbol ValueQ OwnValues DownValues UpValues Options Attributes Information Unique Head AtomQ
+
+syntax keyword mmaKeyAttrib Orderless Flat OneIdentity Listable Constant NumericFunction Protected Locked ReadProtected HoldFirst HoldRest HoldAll HoldAllComplete NHoldFirst NHoldRest NHoldAll SequenceHold Temporary Stub
+
+syntax keyword mmaKeyParallel ParallelArray ParallelCombine ParallelDo ParallelEvaluate ParallelMap ParallelNeeds ParallelProduct ParallelSubmit ParallelSum ParallelTable ParallelTry Parallelization Parallelize
+
+syntax keyword mmaKeyMessage Quiet Off On Assert Message MessageName Check MessageDialog Beep Speak EmitSound $MessagePrePrint $MessageList MessageList MessagePacket $Language $MessageGroups $Messages
+
+syntax keyword mmaKeyFormula Simplify FullSimplify FunctionExpand Expand Factor Collect Together Apart Cancel
+
+syntax keyword mmaKeyGroup SymmetricGroup AlternatingGroup CyclicGroup DihedralGroup AbelianGroup MathieuGroupM11 MathieuGroupM12 MathieuGroupM22 MathieuGroupM23 MathieuGroupM24 ConwayGroupCo1 ConwayGroupCo2 ConwayGroupCo3 HigmanSimsGroupHS JankoGroupJ2 McLaughlinGroupMcL SuzukiGroupSuz FischerGroupFi22 FischerGroupFi23 FischerGroupFi24Prime HeldGroupHe HaradaNortonGroupHN ThompsonGroupTh BabyMonsterGroupB MonsterGroupM JankoGroupJ1 JankoGroupJ3 JankoGroupJ4 RudvalisGroupRu ONanGroupON LyonsGroupLy TitsGroupT PermutationGroup
+syntax keyword mmaKeyGroup GroupOrder GroupElements GroupElementQ GroupElementPosition GroupElementToWord GroupElementFromWord GroupGenerators GroupMultiplicationTable GroupStabilizerChain GroupActionBase GroupOrbits GroupStabilizer GroupSetwiseStabilizer RightCosetRepresentative GroupCentralizer
+
+syntax keyword mmaKeyPerm Cycles PermutationCyclesQ PermutationCycles PermutationList PermutationListQ RandomPermutation PermutationReplace PermutationProduct InversePermutation PermutationPower Permute FindPermutation Permutations PermutationOrder PermutationSupport PermutationLength PermutationMin PermutationMax
+
+syntax keyword mmaKeyColor RGBColor Hue CMYKColor GrayLevel LABColor LCHColor LUVColor XYZColor
+syntax keyword mmaKeyColor Lighter Darker Blend ColorNegate RandomColor ColorQ ColorDistance
+syntax keyword mmaKeyColor Red Green Blue Black White Gray Cyan Magenta Yellow Brown Orange Pink Purple LightRed LightGreen LightBlue LightGray LightCyan LightMagenta LightYellow LightBrown LightOrange LightPink LightPurple Transparent
 
 " Comment: (* ... *)
 syntax region mmaComment start='(\*' end='\*)'
@@ -230,10 +285,33 @@ hi def link mmaKeyConstant mmaFunction
 hi def link mmaKeyArith mmaFunction
 hi def link mmaKeyElemFunc mmaFunction
 hi def link mmaKeySpecFunc mmaFunction
+hi def link mmaKeyCombin mmaFunction
+hi def link mmaKeyAnalysis mmaFunction
+hi def link mmaKeyTest mmaFunction
 hi def link mmaKeyBoolean mmaFunction
 hi def link mmaKeyList mmaFunction
+hi def link mmaKeyApply mmaFunction
 hi def link mmaKeyPlot mmaFunction
 hi def link mmaKeyContext mmaFunction
+hi def link mmaKeyEval mmaFunction
+hi def link mmaKeyFormat mmaFunction
+hi def link mmaKeyBox mmaFunction
+hi def link mmaKeyNotation mmaFunction
+hi def link mmaKeyStyle mmaFunction
+hi def link mmaKeyGrid mmaFunction
+hi def link mmaKeyString mmaFunction
+hi def link mmaKeyTensor mmaFunction
+hi def link mmaKeyScope mmaFunction
+hi def link mmaKeyMatrix mmaFunction
+hi def link mmaKeyAssign mmaFunction
+hi def link mmaKeySymbol mmaFunction
+hi def link mmaKeyAttrib mmaFunction
+hi def link mmaKeyParallel mmaFunction
+hi def link mmaKeyMessage mmaFunction
+hi def link mmaKeyFormula mmaFunction
+hi def link mmaKeyGroup mmaFunction
+hi def link mmaKeyPerm mmaFunction
+hi def link mmaKeyColor mmaFunction
 
 hi def link mmaOpAssign mmaOperator
 hi def link mmaOpCompare mmaOperator
