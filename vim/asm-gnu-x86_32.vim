@@ -32,10 +32,20 @@ endif
 
 " Instructions:
 if (exists('g:gas_instruction_size') && (g:gas_instruction_size == 1)) || (exists('b:gas_instruction_size') && (b:gas_instruction_size == 1))
-	syn keyword gasInstrX86General movb movw movl addb addw addl subb subw subl
+	syn keyword gasInstrX86General movb movw movl addb addw addl subb subw subl negb negw negl
+	syn keyword gasInstrX86General mulb mulw mull imulb imulw imull divb divw divl idivb idivw idivl
+	syn keyword gasInstrX86General orb orw orl andb andw andl xorb xorw xorl notb notw notl
+	syn keyword gasInstrX86General salb salw sall sarb sarw sarl shlb shlw shll shrb shrw shrl
+	syn keyword gasInstrX86General lodsb lodsw lodsl stosb stosw stosl inb inw inl outb outw outl
+	syn keyword gasInstrX86General pushw pushl popw popl
 else
-	syn keyword gasInstrX86General mov add sub
+	syn keyword gasInstrX86General mov add sub neg or and xor not mul imul div idiv
+	syn keyword gasInstrX86General sal sar shl shr push pop in out
 endif
+
+syn keyword gasInstrX86General cld std call jmp
+syn keyword gasInstrX86Jump ja jae jb jbe jc je jz jg jge jl jle jo jp js jna jnae jnb jnbe jnc jne jnz jng jnge jnl jnle jno jnp jns
+syn keyword gasInstrX86System cli sti hlt str ltr lgdt lidt lldt
 
 " Highlighting:
 hi link gasRegX86General Identifier
@@ -44,6 +54,8 @@ hi link gasRegX86Debug Identifier
 hi link gasRegX86Control Identifier
 hi link gasRegX86Test Identifier
 hi link gasInstrX86General Statement
+hi link gasInstrX86Jump Statement
+hi link gasInstrX86System Statement
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
