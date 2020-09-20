@@ -38,7 +38,11 @@ syntax keyword texEnvs contained matrix pmatrix bmatrix Bmatrix vmatrix Vmatrix 
 syntax keyword texEnvs contained frame columns block
 
 " Labels: \label, \ref, \eqref, \bibitem, \cite, \index
-syntax region texLabel start='\\\%(label\|ref\|eqref\|bibitem\|cite\|index\){' end='}' contains=@NoSpell
+syntax region texLabel start='\\\%(label\|ref\|eqref\|bibitem\|index\){' end='}' contains=@NoSpell
+
+syntax region texRefOption contained matchgroup=Delimiter start='\[' end=']' contains=@NoSpell,texRefZone nextgroup=texRefOption,texCite
+syntax region texCite contained matchgroup=Delimiter start='{' end='}' contains=@NoSpell,texRefZone,texCite
+syntax match texRefZone '\\cite\%([tp]\*\=\)\=\>' nextgroup=texRefOption,texCite
 
 " Sectioning: \part, \chapter, \section, \subsection, \subsubsection, \paragraph, subparagraph
 syntax region texSection start='\\\%(part\|chapter\*\?\|section\*\?\|subsection\*\?\|subsubsection\*\?\|paragraph\|subparagraph\|frametitle\){' end='}' contains=texCommand,texSingleDollar,@Spell
@@ -73,6 +77,15 @@ syntax region texMathDisplayed start="\\\[" end="\\]" contains=texComment,texCom
 
 syntax region texMathEnviron start="\\begin{\%(displaymath\|equation\|equation\*\|align\|align\*\|gather\|gather\*\|multline\|multline\*\|eqnarray\|eqnarray\*\)}" end="\\end{\%(displaymath\|equation\|equation\*\|align\|align\*\|gather\|gather\*\|multline\|multline\*\|eqnarray\|eqnarray\*\)}" contains=texComment,texCommand,texEnvDelim,texLabel,@NoSpell keepend
 
+" Verbatim: verbatim, lstlisting
+syntax cluster texVerbatim contains=texVerbEnvSpell,texVerbEnvNoSpell,texVerbInlSpell,texVerbInlNoSpell
+
+syntax region texVerbEnvSpell start="\\begin{\%(verbatim\|verbatim\*\)}" end="\\end{\%(verbatim\|verbatim\*\)}" contains=texEnvDelim,@Spell keepend
+syntax region texVerbEnvNoSpell start="\\begin{\%(lstlisting\)}" end="\\end{\%(lstlisting\)}" contains=texEnvDelim,texSingleDollar,@NoSpell keepend
+
+syntax region texVerbInlSpell start="\\verb\*\=\z([^\ta-zA-Z]\)" end="\z1" contains=@Spell
+syntax region texVerbInlNoSpell start="\\lstinline\z([^\ta-zA-Z]\)" end="\z1" contains=@NoSpell
+
 " Comments: % ...
 syntax region texComment start='\\\@<!\%(\\\\\)*%' end='$' keepend
 
@@ -99,10 +112,11 @@ syntax keyword texModifier contained vec hat bar dot ddot dddot ddddot tilde mat
 
 syntax keyword texMiscMath contained frac eth ell Re Im infty imath jmath
 syntax keyword texMiscMath contained ldots cdots vdots ddots
+syntax keyword texMiscMath contained overset underset overbrace underbrace
 
-syntax keyword texSpace contained quad qquad phantom
+syntax keyword texSpace contained quad qquad phantom hphanton vphantom hspace vspace
 
-syntax keyword texFont contained mathfrak mathcal mathbb mathrm mathsf mathit mathnormal mathds mathbf textbf textit textrm emph text
+syntax keyword texFont contained mathfrak mathcal mathbb mathrm mathsf mathit mathnormal mathds mathbf textbf textit textrm emph text underline boldsymbol
 
 syntax keyword texItem contained item
 
@@ -124,6 +138,9 @@ hi def link texUsePkgDecl Include
 hi def link texUsePkgArgs Include
 hi def link texUsePkgName Include
 hi def link texLabel Label
+hi def link texRefZone Label
+hi def link texRefOption Label
+hi def link texCite Label
 hi def link texSection Structure
 hi def link texSectionType Structure
 hi def link texHead StorageClass
@@ -133,6 +150,10 @@ hi def link texDoubleDollar Identifier
 hi def link texMathInline Identifier
 hi def link texMathDisplayed Identifier
 hi def link texMathEnviron Identifier
+hi def link texVerbEnvSpell String
+hi def link texVerbEnvNoSpell String
+hi def link texVerbInlSpell Character
+hi def link texVerbInlNoSpell Character
 hi def link texLeftRight Delimiter
 hi def link texDefine Macro
 hi def link texStructure TypeDef
