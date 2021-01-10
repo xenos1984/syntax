@@ -69,7 +69,7 @@ syntax keyword mmaCNRelation contained Element ReverseElement NotElement NotReve
 syntax keyword mmaCNRelation contained SquareSubset SquareSubsetEqual SquareSuperset SquareSupersetEqual NotSquareSubset NotSquareSubsetEqual NotSquareSuperset NotSquareSupersetEqual
 syntax keyword mmaCNRelation contained Precedes PrecedesEqual PrecedesSlantEqual PrecedesTilde Succeeds SucceedsEqual SucceedsSlantEqual SucceedsTilde
 syntax keyword mmaCNRelation contained NotPrecedes NotPrecedesEqual NotPrecedesSlantEqual NotPrecedesTilde NotSucceeds NotSucceedsEqual NotSucceedsSlantEqual NotSucceedsTilde
-syntax keyword mmaCNRelation contained LeftTriangle LeftTriangleEqual LeftTriangleBar RightTriangle RightTriangleEqual RightTriangleBar
+syntax keyword mmaCNRelation contained LeftTriangle LeftTriangleEqual LeftTriangleBar RightTriangle RightTriangleEqual RightTriangleBar Perpendicular
 syntax keyword mmaCNRelation contained NotLeftTriangle NotLeftTriangleEqual NotLeftTriangleBar NotRightTriangle NotRightTriangleEqual NotRightTriangleBar
 syntax keyword mmaCNRelation contained LessLess GreaterGreater NestedLessLess NestedGreaterGreater NotLessLess NotGreaterGreater NotNestedLessLess NotNestedGreaterGreater
 
@@ -162,6 +162,7 @@ syntax keyword mmaVariable $ControlActiveSetting
 syntax keyword mmaVariable $CookieStore
 syntax keyword mmaVariable $Cookies
 syntax keyword mmaVariable $CreationDate
+syntax keyword mmaVariable $CryptographicEllipticCurveNames
 syntax keyword mmaVariable $CurrentLink
 syntax keyword mmaVariable $CurrentTask
 syntax keyword mmaVariable $CurrentWebSession
@@ -174,6 +175,8 @@ syntax keyword mmaVariable $DefaultImagingDevice
 syntax keyword mmaVariable $DefaultLocalBase
 syntax keyword mmaVariable $DefaultNetworkInterface
 syntax keyword mmaVariable $DefaultProxyRules
+syntax keyword mmaVariable $DefaultRemoteBatchSubmissionEnvironment
+syntax keyword mmaVariable $DefaultRemoteKernel
 syntax keyword mmaVariable $DefaultSystemCredentialStore
 syntax keyword mmaVariable $Display
 syntax keyword mmaVariable $DisplayFunction
@@ -193,6 +196,7 @@ syntax keyword mmaVariable $Failed
 syntax keyword mmaVariable $FontFamilies
 syntax keyword mmaVariable $FrontEnd
 syntax keyword mmaVariable $FrontEndSession
+syntax keyword mmaVariable $GeneratedAssetLocation
 syntax keyword mmaVariable $GeoLocation
 syntax keyword mmaVariable $GeoLocationCity
 syntax keyword mmaVariable $GeoLocationCountry
@@ -282,6 +286,7 @@ syntax keyword mmaVariable $ProcessID
 syntax keyword mmaVariable $ProcessorCount
 syntax keyword mmaVariable $ProcessorType
 syntax keyword mmaVariable $PublisherID
+syntax keyword mmaVariable $RandomGeneratorState
 syntax keyword mmaVariable $RecursionLimit
 syntax keyword mmaVariable $ReleaseNumber
 syntax keyword mmaVariable $RequesterAddress
@@ -334,7 +339,7 @@ syntax keyword mmaVariable $VoiceStyles
 syntax keyword mmaVariable $WolframDocumentsDirectory
 syntax keyword mmaVariable $WolframID
 syntax keyword mmaVariable $WolframUUID
-
+syntax keyword mmaFunction AASTriangle
 syntax keyword mmaFunction APIFunction
 syntax keyword mmaFunction ARCHProcess
 syntax keyword mmaFunction ARIMAProcess
@@ -364,6 +369,14 @@ syntax keyword mmaFunction AccountingForm
 syntax keyword mmaFunction Accumulate
 syntax keyword mmaFunction Accuracy
 syntax keyword mmaFunction AccuracyGoal
+syntax keyword mmaFunction AcousticAbsorbingValue
+syntax keyword mmaFunction AcousticImpedanceValue
+syntax keyword mmaFunction AcousticNormalVelocityValue
+syntax keyword mmaFunction AcousticPDEComponent
+syntax keyword mmaFunction AcousticPressureCondition
+syntax keyword mmaFunction AcousticRadiationValue
+syntax keyword mmaFunction AcousticSoundHardValue
+syntax keyword mmaFunction AcousticSoundSoftCondition
 syntax keyword mmaFunction ActionMenu
 syntax keyword mmaFunction Activate
 syntax keyword mmaFunction ActiveClassification
@@ -392,6 +405,7 @@ syntax keyword mmaFunction After
 syntax keyword mmaFunction AggregatedEntityClass
 syntax keyword mmaFunction AggregationLayer
 syntax keyword mmaFunction AirPressureData
+syntax keyword mmaFunction AirSoundAttenuation
 syntax keyword mmaFunction AirTemperatureData
 syntax keyword mmaFunction AircraftData
 syntax keyword mmaFunction AirportData
@@ -446,8 +460,10 @@ syntax keyword mmaFunction AngleBisector
 syntax keyword mmaFunction AngleBracket
 syntax keyword mmaFunction AnglePath
 syntax keyword mmaFunction AnglePath3D
+syntax keyword mmaFunction AngleVector
 syntax keyword mmaFunction AngularGauge
 syntax keyword mmaFunction Animate
+syntax keyword mmaFunction AnimatedImage
 syntax keyword mmaFunction AnimationDirection
 syntax keyword mmaFunction AnimationRate
 syntax keyword mmaFunction AnimationRepetitions
@@ -469,6 +485,7 @@ syntax keyword mmaFunction AnomalyDetector
 syntax keyword mmaFunction AnomalyDetectorFunction
 syntax keyword mmaFunction Anonymous
 syntax keyword mmaFunction Antialiasing
+syntax keyword mmaFunction Antihermitian
 syntax keyword mmaFunction AntihermitianMatrixQ
 syntax keyword mmaFunction Antisymmetric
 syntax keyword mmaFunction AntisymmetricMatrixQ
@@ -485,8 +502,10 @@ syntax keyword mmaFunction AppellF1
 syntax keyword mmaFunction Append
 syntax keyword mmaFunction AppendLayer
 syntax keyword mmaFunction AppendTo
+syntax keyword mmaFunction Application
 syntax keyword mmaFunction Apply
 syntax keyword mmaFunction ApplySides
+syntax keyword mmaFunction ApplyTo
 syntax keyword mmaFunction ArcCos
 syntax keyword mmaFunction ArcCosh
 syntax keyword mmaFunction ArcCot
@@ -506,6 +525,7 @@ syntax keyword mmaFunction Area
 syntax keyword mmaFunction Arg
 syntax keyword mmaFunction ArgMax
 syntax keyword mmaFunction ArgMin
+syntax keyword mmaFunction ArgumentsOptions
 syntax keyword mmaFunction ArithmeticGeometricMean
 syntax keyword mmaFunction Around
 syntax keyword mmaFunction AroundReplace
@@ -517,7 +537,9 @@ syntax keyword mmaFunction ArrayFlatten
 syntax keyword mmaFunction ArrayMesh
 syntax keyword mmaFunction ArrayPad
 syntax keyword mmaFunction ArrayPlot
+syntax keyword mmaFunction ArrayPlot3D
 syntax keyword mmaFunction ArrayQ
+syntax keyword mmaFunction ArrayReduce
 syntax keyword mmaFunction ArrayResample
 syntax keyword mmaFunction ArrayReshape
 syntax keyword mmaFunction ArrayRules
@@ -535,6 +557,8 @@ syntax keyword mmaFunction AskedQ
 syntax keyword mmaFunction AskedValue
 syntax keyword mmaFunction AspectRatio
 syntax keyword mmaFunction Assert
+syntax keyword mmaFunction AssessmentFunction
+syntax keyword mmaFunction AssessmentResultObject
 syntax keyword mmaFunction AssociateTo
 syntax keyword mmaFunction Association
 syntax keyword mmaFunction AssociationFormat
@@ -545,14 +569,17 @@ syntax keyword mmaFunction AssumeDeterministic
 syntax keyword mmaFunction Assuming
 syntax keyword mmaFunction Assumptions
 syntax keyword mmaFunction Asymptotic
+syntax keyword mmaFunction AsymptoticDSolveValue
 syntax keyword mmaFunction AsymptoticEqual
 syntax keyword mmaFunction AsymptoticEquivalent
+syntax keyword mmaFunction AsymptoticExpectation
 syntax keyword mmaFunction AsymptoticGreater
 syntax keyword mmaFunction AsymptoticGreaterEqual
 syntax keyword mmaFunction AsymptoticIntegrate
 syntax keyword mmaFunction AsymptoticLess
 syntax keyword mmaFunction AsymptoticLessEqual
 syntax keyword mmaFunction AsymptoticOutputTracker
+syntax keyword mmaFunction AsymptoticProbability
 syntax keyword mmaFunction AsymptoticProduct
 syntax keyword mmaFunction AsymptoticRSolveValue
 syntax keyword mmaFunction AsymptoticSolve
@@ -564,6 +591,7 @@ syntax keyword mmaFunction AtomCount
 syntax keyword mmaFunction AtomDiagramCoordinates
 syntax keyword mmaFunction AtomList
 syntax keyword mmaFunction AtomQ
+syntax keyword mmaFunction AttachCell
 syntax keyword mmaFunction AttentionLayer
 syntax keyword mmaFunction Attributes
 syntax keyword mmaFunction Audio
@@ -620,7 +648,8 @@ syntax keyword mmaFunction AudioStop
 syntax keyword mmaFunction AudioStream
 syntax keyword mmaFunction AudioStreams
 syntax keyword mmaFunction AudioTimeStretch
-syntax keyword mmaFunction AudioTracks
+syntax keyword mmaFunction AudioTrackApply
+syntax keyword mmaFunction AudioTrackSelection
 syntax keyword mmaFunction AudioTrim
 syntax keyword mmaFunction AudioType
 syntax keyword mmaFunction AugmentedPolyhedron
@@ -710,6 +739,7 @@ syntax keyword mmaFunction BernoulliDistribution
 syntax keyword mmaFunction BernoulliGraphDistribution
 syntax keyword mmaFunction BernoulliProcess
 syntax keyword mmaFunction BernsteinBasis
+syntax keyword mmaFunction BesagL
 syntax keyword mmaFunction BesselFilterModel
 syntax keyword mmaFunction BesselI
 syntax keyword mmaFunction BesselJ
@@ -742,8 +772,18 @@ syntax keyword mmaFunction BinarySerialize
 syntax keyword mmaFunction BinaryWrite
 syntax keyword mmaFunction Binomial
 syntax keyword mmaFunction BinomialDistribution
+syntax keyword mmaFunction BinomialPointProcess
 syntax keyword mmaFunction BinomialProcess
 syntax keyword mmaFunction BinormalDistribution
+syntax keyword mmaFunction BioSequence
+syntax keyword mmaFunction BioSequenceBackTranslateList
+syntax keyword mmaFunction BioSequenceComplement
+syntax keyword mmaFunction BioSequenceInstances
+syntax keyword mmaFunction BioSequenceModify
+syntax keyword mmaFunction BioSequenceQ
+syntax keyword mmaFunction BioSequenceReverseComplement
+syntax keyword mmaFunction BioSequenceTranscribe
+syntax keyword mmaFunction BioSequenceTranslate
 syntax keyword mmaFunction BiorthogonalSplineWavelet
 syntax keyword mmaFunction BipartiteGraphQ
 syntax keyword mmaFunction BiquadraticFilterModel
@@ -863,6 +903,7 @@ syntax keyword mmaFunction ButtonSource
 syntax keyword mmaFunction Byte
 syntax keyword mmaFunction ByteArray
 syntax keyword mmaFunction ByteArrayFormat
+syntax keyword mmaFunction ByteArrayFormatQ
 syntax keyword mmaFunction ByteArrayQ
 syntax keyword mmaFunction ByteArrayToString
 syntax keyword mmaFunction ByteCount
@@ -894,6 +935,7 @@ syntax keyword mmaFunction CanonicalizePolygon
 syntax keyword mmaFunction CanonicalizePolyhedron
 syntax keyword mmaFunction CantorMesh
 syntax keyword mmaFunction CantorStaircase
+syntax keyword mmaFunction Canvas
 syntax keyword mmaFunction Cap
 syntax keyword mmaFunction CapForm
 syntax keyword mmaFunction CapitalDifferentialD
@@ -914,6 +956,7 @@ syntax keyword mmaFunction CategoricalDistribution
 syntax keyword mmaFunction Catenate
 syntax keyword mmaFunction CatenateLayer
 syntax keyword mmaFunction CauchyDistribution
+syntax keyword mmaFunction CauchyPointProcess
 syntax keyword mmaFunction CauchyWindow
 syntax keyword mmaFunction CayleyGraph
 syntax keyword mmaFunction Ceiling
@@ -997,6 +1040,7 @@ syntax keyword mmaFunction ChebyshevT
 syntax keyword mmaFunction ChebyshevU
 syntax keyword mmaFunction Check
 syntax keyword mmaFunction CheckAbort
+syntax keyword mmaFunction CheckArguments
 syntax keyword mmaFunction Checkbox
 syntax keyword mmaFunction CheckboxBar
 syntax keyword mmaFunction ChemicalData
@@ -1039,6 +1083,7 @@ syntax keyword mmaFunction ClearPermissions
 syntax keyword mmaFunction ClearSystemCache
 syntax keyword mmaFunction ClebschGordan
 syntax keyword mmaFunction ClickPane
+syntax keyword mmaFunction ClickToCopy
 syntax keyword mmaFunction Clip
 syntax keyword mmaFunction ClipPlanes
 syntax keyword mmaFunction ClipPlanesStyle
@@ -1087,6 +1132,7 @@ syntax keyword mmaFunction CoefficientList
 syntax keyword mmaFunction CoefficientRules
 syntax keyword mmaFunction CoifletWavelet
 syntax keyword mmaFunction Collect
+syntax keyword mmaFunction CollinearPoints
 syntax keyword mmaFunction Colon
 syntax keyword mmaFunction ColorBalance
 syntax keyword mmaFunction ColorCombine
@@ -1097,6 +1143,7 @@ syntax keyword mmaFunction ColorDataFunction
 syntax keyword mmaFunction ColorDetect
 syntax keyword mmaFunction ColorDistance
 syntax keyword mmaFunction ColorFunction
+syntax keyword mmaFunction ColorFunctionBinning
 syntax keyword mmaFunction ColorFunctionScaling
 syntax keyword mmaFunction ColorNegate
 syntax keyword mmaFunction ColorProfileData
@@ -1117,6 +1164,13 @@ syntax keyword mmaFunction ColumnLines
 syntax keyword mmaFunction ColumnSpacings
 syntax keyword mmaFunction ColumnWidths
 syntax keyword mmaFunction ColumnsEqual
+syntax keyword mmaFunction CombinatorB
+syntax keyword mmaFunction CombinatorC
+syntax keyword mmaFunction CombinatorI
+syntax keyword mmaFunction CombinatorK
+syntax keyword mmaFunction CombinatorS
+syntax keyword mmaFunction CombinatorW
+syntax keyword mmaFunction CombinatorY
 syntax keyword mmaFunction CombinedEntityClass
 syntax keyword mmaFunction CombinerFunction
 syntax keyword mmaFunction CometData
@@ -1136,6 +1190,7 @@ syntax keyword mmaFunction Compile
 syntax keyword mmaFunction Compiled
 syntax keyword mmaFunction CompiledCodeFunction
 syntax keyword mmaFunction CompiledFunction
+syntax keyword mmaFunction CompiledLayer
 syntax keyword mmaFunction CompilerOptions
 syntax keyword mmaFunction Complement
 syntax keyword mmaFunction ComplementedEntityClass
@@ -1143,6 +1198,7 @@ syntax keyword mmaFunction CompleteGraph
 syntax keyword mmaFunction CompleteGraphQ
 syntax keyword mmaFunction CompleteKaryTree
 syntax keyword mmaFunction Complex
+syntax keyword mmaFunction ComplexArrayPlot
 syntax keyword mmaFunction ComplexContourPlot
 syntax keyword mmaFunction ComplexExpand
 syntax keyword mmaFunction ComplexInfinity
@@ -1174,9 +1230,15 @@ syntax keyword mmaFunction Cone
 syntax keyword mmaFunction ConfidenceLevel
 syntax keyword mmaFunction ConfidenceRange
 syntax keyword mmaFunction ConfidenceTransform
+syntax keyword mmaFunction Confirm
+syntax keyword mmaFunction ConfirmAssert
+syntax keyword mmaFunction ConfirmBy
+syntax keyword mmaFunction ConfirmMatch
+syntax keyword mmaFunction ConfirmQuiet
 syntax keyword mmaFunction ConformAudio
 syntax keyword mmaFunction ConformImages
 syntax keyword mmaFunction Congruent
+syntax keyword mmaFunction ConicGradientFilling
 syntax keyword mmaFunction ConicHullRegion
 syntax keyword mmaFunction ConicOptimization
 syntax keyword mmaFunction Conjugate
@@ -1193,13 +1255,11 @@ syntax keyword mmaFunction ConnectedMoleculeQ
 syntax keyword mmaFunction ConnectionSettings
 syntax keyword mmaFunction ConnesWindow
 syntax keyword mmaFunction ConoverTest
+syntax keyword mmaFunction ConservativeConvectionPDETerm
 syntax keyword mmaFunction Constant
 syntax keyword mmaFunction ConstantArray
-syntax keyword mmaFunction ConstantArrayLayer
 syntax keyword mmaFunction ConstantImage
-syntax keyword mmaFunction ConstantPlusLayer
 syntax keyword mmaFunction ConstantRegionQ
-syntax keyword mmaFunction ConstantTimesLayer
 syntax keyword mmaFunction Constants
 syntax keyword mmaFunction ConstellationData
 syntax keyword mmaFunction Construct
@@ -1251,11 +1311,15 @@ syntax keyword mmaFunction ControllerMethod
 syntax keyword mmaFunction ControllerPath
 syntax keyword mmaFunction ControllerState
 syntax keyword mmaFunction ControlsRendering
+syntax keyword mmaFunction ConvectionPDETerm
 syntax keyword mmaFunction Convergents
 syntax keyword mmaFunction ConversionRules
 syntax keyword mmaFunction ConvexHullMesh
+syntax keyword mmaFunction ConvexHullRegion
+syntax keyword mmaFunction ConvexOptimization
 syntax keyword mmaFunction ConvexPolygonQ
 syntax keyword mmaFunction ConvexPolyhedronQ
+syntax keyword mmaFunction ConvexRegionQ
 syntax keyword mmaFunction ConvolutionLayer
 syntax keyword mmaFunction Convolve
 syntax keyword mmaFunction ConwayGroupCo1
@@ -1270,6 +1334,7 @@ syntax keyword mmaFunction CoordinateChartData
 syntax keyword mmaFunction CoordinateTransform
 syntax keyword mmaFunction CoordinateTransformData
 syntax keyword mmaFunction CoordinatesToolOptions
+syntax keyword mmaFunction CoplanarPoints
 syntax keyword mmaFunction CoprimeQ
 syntax keyword mmaFunction Coproduct
 syntax keyword mmaFunction CopulaDistribution
@@ -1319,6 +1384,7 @@ syntax keyword mmaFunction CreateDirectory
 syntax keyword mmaFunction CreateDocument
 syntax keyword mmaFunction CreateFile
 syntax keyword mmaFunction CreateIntermediateDirectories
+syntax keyword mmaFunction CreateLicenseEntitlement
 syntax keyword mmaFunction CreateManagedLibraryExpression
 syntax keyword mmaFunction CreateNotebook
 syntax keyword mmaFunction CreatePacletArchive
@@ -1366,6 +1432,7 @@ syntax keyword mmaFunction CyclicGroup
 syntax keyword mmaFunction Cyclotomic
 syntax keyword mmaFunction Cylinder
 syntax keyword mmaFunction CylindricalDecomposition
+syntax keyword mmaFunction CylindricalDecompositionFunction
 syntax keyword mmaFunction D
 syntax keyword mmaFunction DEigensystem
 syntax keyword mmaFunction DEigenvalues
@@ -1390,7 +1457,7 @@ syntax keyword mmaFunction DatabaseDisconnect
 syntax keyword mmaFunction DatabaseReference
 syntax keyword mmaFunction Databin
 syntax keyword mmaFunction DatabinAdd
-syntax keyword mmaFunction DatabinRemove
+syntax keyword mmaFunction DatabinSubmit
 syntax keyword mmaFunction DatabinUpload
 syntax keyword mmaFunction Databins
 syntax keyword mmaFunction Dataset
@@ -1411,6 +1478,7 @@ syntax keyword mmaFunction DatePattern
 syntax keyword mmaFunction DatePlus
 syntax keyword mmaFunction DateRange
 syntax keyword mmaFunction DateReduction
+syntax keyword mmaFunction DateSelect
 syntax keyword mmaFunction DateString
 syntax keyword mmaFunction DateTicksFormat
 syntax keyword mmaFunction DateValue
@@ -1510,6 +1578,7 @@ syntax keyword mmaFunction Depth
 syntax keyword mmaFunction DepthFirstScan
 syntax keyword mmaFunction Derivative
 syntax keyword mmaFunction DerivativeFilter
+syntax keyword mmaFunction DerivativePDETerm
 syntax keyword mmaFunction DerivedKey
 syntax keyword mmaFunction DescriptorStateSpace
 syntax keyword mmaFunction DesignMatrix
@@ -1553,6 +1622,9 @@ syntax keyword mmaFunction DifferentialD
 syntax keyword mmaFunction DifferentialRoot
 syntax keyword mmaFunction DifferentialRootReduce
 syntax keyword mmaFunction DifferentiatorFilter
+syntax keyword mmaFunction DiffusionPDETerm
+syntax keyword mmaFunction DiggleGatesPointProcess
+syntax keyword mmaFunction DiggleGrattonPointProcess
 syntax keyword mmaFunction DigitBlock
 syntax keyword mmaFunction DigitCharacter
 syntax keyword mmaFunction DigitCount
@@ -1714,7 +1786,10 @@ syntax keyword mmaFunction EarthImpactData
 syntax keyword mmaFunction EarthquakeData
 syntax keyword mmaFunction EccentricityCentrality
 syntax keyword mmaFunction Echo
+syntax keyword mmaFunction EchoEvaluation
 syntax keyword mmaFunction EchoFunction
+syntax keyword mmaFunction EchoLabel
+syntax keyword mmaFunction EchoTiming
 syntax keyword mmaFunction EclipseType
 syntax keyword mmaFunction EdgeAdd
 syntax keyword mmaFunction EdgeBetweennessCentrality
@@ -1767,13 +1842,17 @@ syntax keyword mmaFunction EllipticTheta
 syntax keyword mmaFunction EllipticThetaPrime
 syntax keyword mmaFunction EmbedCode
 syntax keyword mmaFunction EmbeddedHTML
+syntax keyword mmaFunction EmbeddedSQLEntityClass
+syntax keyword mmaFunction EmbeddedSQLExpression
 syntax keyword mmaFunction EmbeddedService
 syntax keyword mmaFunction EmbeddingLayer
 syntax keyword mmaFunction EmitSound
 syntax keyword mmaFunction EmpiricalDistribution
 syntax keyword mmaFunction EmptyGraphQ
 syntax keyword mmaFunction EmptyRegion
+syntax keyword mmaFunction EmptySpaceF
 syntax keyword mmaFunction Enabled
+syntax keyword mmaFunction Enclose
 syntax keyword mmaFunction Encode
 syntax keyword mmaFunction Encrypt
 syntax keyword mmaFunction EncryptFile
@@ -1828,6 +1907,7 @@ syntax keyword mmaFunction ErrorBox
 syntax keyword mmaFunction EscapeRadius
 syntax keyword mmaFunction EstimatedBackground
 syntax keyword mmaFunction EstimatedDistribution
+syntax keyword mmaFunction EstimatedPointProcess
 syntax keyword mmaFunction EstimatedProcess
 syntax keyword mmaFunction EstimatorGains
 syntax keyword mmaFunction EstimatorRegulator
@@ -1850,6 +1930,7 @@ syntax keyword mmaFunction EvaluationEnvironment
 syntax keyword mmaFunction EvaluationMonitor
 syntax keyword mmaFunction EvaluationNotebook
 syntax keyword mmaFunction EvaluationObject
+syntax keyword mmaFunction EvaluationPrivileges
 syntax keyword mmaFunction Evaluator
 syntax keyword mmaFunction EvenQ
 syntax keyword mmaFunction EventData
@@ -1929,6 +2010,7 @@ syntax keyword mmaFunction FaceAlign
 syntax keyword mmaFunction FaceForm
 syntax keyword mmaFunction FaceGrids
 syntax keyword mmaFunction FaceGridsStyle
+syntax keyword mmaFunction FaceRecognize
 syntax keyword mmaFunction FacialFeatures
 syntax keyword mmaFunction Factor
 syntax keyword mmaFunction FactorInteger
@@ -1978,6 +2060,7 @@ syntax keyword mmaFunction FileDate
 syntax keyword mmaFunction FileExistsQ
 syntax keyword mmaFunction FileExtension
 syntax keyword mmaFunction FileFormat
+syntax keyword mmaFunction FileFormatQ
 syntax keyword mmaFunction FileHash
 syntax keyword mmaFunction FileNameDepth
 syntax keyword mmaFunction FileNameDrop
@@ -2065,6 +2148,7 @@ syntax keyword mmaFunction FindMoleculeSubstructure
 syntax keyword mmaFunction FindPath
 syntax keyword mmaFunction FindPeaks
 syntax keyword mmaFunction FindPermutation
+syntax keyword mmaFunction FindPointProcessParameters
 syntax keyword mmaFunction FindPostmanTour
 syntax keyword mmaFunction FindProcessParameters
 syntax keyword mmaFunction FindRepeat
@@ -2113,6 +2197,8 @@ syntax keyword mmaFunction Fold
 syntax keyword mmaFunction FoldList
 syntax keyword mmaFunction FoldPair
 syntax keyword mmaFunction FoldPairList
+syntax keyword mmaFunction FoldWhile
+syntax keyword mmaFunction FoldWhileList
 syntax keyword mmaFunction FollowRedirects
 syntax keyword mmaFunction FontColor
 syntax keyword mmaFunction FontFamily
@@ -2139,6 +2225,7 @@ syntax keyword mmaFunction FormulaLookup
 syntax keyword mmaFunction FortranForm
 syntax keyword mmaFunction Forward
 syntax keyword mmaFunction ForwardBackward
+syntax keyword mmaFunction ForwardCloudCredentials
 syntax keyword mmaFunction Fourier
 syntax keyword mmaFunction FourierCoefficient
 syntax keyword mmaFunction FourierCosCoefficient
@@ -2211,17 +2298,29 @@ syntax keyword mmaFunction FullInformationOutputRegulator
 syntax keyword mmaFunction FullRegion
 syntax keyword mmaFunction FullSimplify
 syntax keyword mmaFunction Function
+syntax keyword mmaFunction FunctionAnalytic
+syntax keyword mmaFunction FunctionBijective
 syntax keyword mmaFunction FunctionCompile
 syntax keyword mmaFunction FunctionCompileExport
 syntax keyword mmaFunction FunctionCompileExportByteArray
 syntax keyword mmaFunction FunctionCompileExportLibrary
 syntax keyword mmaFunction FunctionCompileExportString
+syntax keyword mmaFunction FunctionContinuous
+syntax keyword mmaFunction FunctionConvexity
+syntax keyword mmaFunction FunctionDiscontinuities
 syntax keyword mmaFunction FunctionDomain
 syntax keyword mmaFunction FunctionExpand
+syntax keyword mmaFunction FunctionInjective
 syntax keyword mmaFunction FunctionInterpolation
+syntax keyword mmaFunction FunctionLayer
+syntax keyword mmaFunction FunctionMeromorphic
+syntax keyword mmaFunction FunctionMonotonicity
 syntax keyword mmaFunction FunctionPeriod
 syntax keyword mmaFunction FunctionRange
+syntax keyword mmaFunction FunctionSign
+syntax keyword mmaFunction FunctionSingularities
 syntax keyword mmaFunction FunctionSpace
+syntax keyword mmaFunction FunctionSurjective
 syntax keyword mmaFunction FussellVeselyImportance
 syntax keyword mmaFunction GARCHProcess
 syntax keyword mmaFunction GCD
@@ -2266,6 +2365,7 @@ syntax keyword mmaFunction GenerateFileSignature
 syntax keyword mmaFunction GenerateHTTPResponse
 syntax keyword mmaFunction GenerateSecuredAuthenticationKey
 syntax keyword mmaFunction GenerateSymmetricKey
+syntax keyword mmaFunction GeneratedAssetLocation
 syntax keyword mmaFunction GeneratedCell
 syntax keyword mmaFunction GeneratedDocumentBinding
 syntax keyword mmaFunction GeneratedParameters
@@ -2281,9 +2381,11 @@ syntax keyword mmaFunction GeoAntipode
 syntax keyword mmaFunction GeoArea
 syntax keyword mmaFunction GeoArraySize
 syntax keyword mmaFunction GeoBackground
+syntax keyword mmaFunction GeoBoundary
 syntax keyword mmaFunction GeoBoundingBox
 syntax keyword mmaFunction GeoBounds
 syntax keyword mmaFunction GeoBoundsRegion
+syntax keyword mmaFunction GeoBoundsRegionBoundary
 syntax keyword mmaFunction GeoBubbleChart
 syntax keyword mmaFunction GeoCenter
 syntax keyword mmaFunction GeoCircle
@@ -2321,6 +2423,7 @@ syntax keyword mmaFunction GeoMarker
 syntax keyword mmaFunction GeoModel
 syntax keyword mmaFunction GeoNearest
 syntax keyword mmaFunction GeoPath
+syntax keyword mmaFunction GeoPolygon
 syntax keyword mmaFunction GeoPosition
 syntax keyword mmaFunction GeoPositionENU
 syntax keyword mmaFunction GeoPositionXYZ
@@ -2360,10 +2463,12 @@ syntax keyword mmaFunction GeometricMean
 syntax keyword mmaFunction GeometricMeanFilter
 syntax keyword mmaFunction GeometricOptimization
 syntax keyword mmaFunction GeometricScene
+syntax keyword mmaFunction GeometricStep
 syntax keyword mmaFunction GeometricTransformation
 syntax keyword mmaFunction GestureHandler
 syntax keyword mmaFunction Get
 syntax keyword mmaFunction GetEnvironment
+syntax keyword mmaFunction GibbsPointProcess
 syntax keyword mmaFunction Glaisher
 syntax keyword mmaFunction GlobalClusteringCoefficient
 syntax keyword mmaFunction Glow
@@ -2485,6 +2590,7 @@ syntax keyword mmaFunction HannPoissonWindow
 syntax keyword mmaFunction HannWindow
 syntax keyword mmaFunction HaradaNortonGroupHN
 syntax keyword mmaFunction HararyGraph
+syntax keyword mmaFunction HardcorePointProcess
 syntax keyword mmaFunction HarmonicMean
 syntax keyword mmaFunction HarmonicMeanFilter
 syntax keyword mmaFunction HarmonicNumber
@@ -2501,13 +2607,23 @@ syntax keyword mmaFunction HeaderLines
 syntax keyword mmaFunction HeaderSize
 syntax keyword mmaFunction HeaderStyle
 syntax keyword mmaFunction Heads
+syntax keyword mmaFunction HeatFluxValue
+syntax keyword mmaFunction HeatInsulationValue
+syntax keyword mmaFunction HeatOutflowValue
+syntax keyword mmaFunction HeatRadiationValue
+syntax keyword mmaFunction HeatSymmetryValue
+syntax keyword mmaFunction HeatTemperatureCondition
+syntax keyword mmaFunction HeatTransferPDEComponent
+syntax keyword mmaFunction HeatTransferValue
 syntax keyword mmaFunction HeavisideLambda
 syntax keyword mmaFunction HeavisidePi
 syntax keyword mmaFunction HeavisideTheta
 syntax keyword mmaFunction HeldGroupHe
+syntax keyword mmaFunction HelmholtzPDEComponent
 syntax keyword mmaFunction Here
 syntax keyword mmaFunction HermiteDecomposition
 syntax keyword mmaFunction HermiteH
+syntax keyword mmaFunction Hermitian
 syntax keyword mmaFunction HermitianMatrixQ
 syntax keyword mmaFunction HessenbergDecomposition
 syntax keyword mmaFunction HeunB
@@ -2537,6 +2653,7 @@ syntax keyword mmaFunction Histogram
 syntax keyword mmaFunction Histogram3D
 syntax keyword mmaFunction HistogramDistribution
 syntax keyword mmaFunction HistogramList
+syntax keyword mmaFunction HistogramPointDensity
 syntax keyword mmaFunction HistogramTransform
 syntax keyword mmaFunction HistogramTransformInterpolation
 syntax keyword mmaFunction HistoricalPeriodData
@@ -2690,6 +2807,8 @@ syntax keyword mmaFunction ImageTrim
 syntax keyword mmaFunction ImageType
 syntax keyword mmaFunction ImageValue
 syntax keyword mmaFunction ImageValuePositions
+syntax keyword mmaFunction ImageVectorscopePlot
+syntax keyword mmaFunction ImageWaveformPlot
 syntax keyword mmaFunction ImagingDevice
 syntax keyword mmaFunction ImplicitRegion
 syntax keyword mmaFunction Implies
@@ -2697,6 +2816,7 @@ syntax keyword mmaFunction Import
 syntax keyword mmaFunction ImportByteArray
 syntax keyword mmaFunction ImportOptions
 syntax keyword mmaFunction ImportString
+syntax keyword mmaFunction ImportedObject
 syntax keyword mmaFunction ImprovementImportance
 syntax keyword mmaFunction In
 syntax keyword mmaFunction InString
@@ -2742,6 +2862,7 @@ syntax keyword mmaFunction InflationMethod
 syntax keyword mmaFunction Information
 syntax keyword mmaFunction InheritScope
 syntax keyword mmaFunction Inherited
+syntax keyword mmaFunction InhomogeneousPoissonPointProcess
 syntax keyword mmaFunction InhomogeneousPoissonProcess
 syntax keyword mmaFunction InitialEvaluationHistory
 syntax keyword mmaFunction InitialSeeding
@@ -2763,6 +2884,7 @@ syntax keyword mmaFunction InputForm
 syntax keyword mmaFunction InputNamePacket
 syntax keyword mmaFunction InputNotebook
 syntax keyword mmaFunction InputPacket
+syntax keyword mmaFunction InputPorts
 syntax keyword mmaFunction InputStream
 syntax keyword mmaFunction InputString
 syntax keyword mmaFunction InputStringPacket
@@ -2881,6 +3003,7 @@ syntax keyword mmaFunction JacobiCS
 syntax keyword mmaFunction JacobiDC
 syntax keyword mmaFunction JacobiDN
 syntax keyword mmaFunction JacobiDS
+syntax keyword mmaFunction JacobiEpsilon
 syntax keyword mmaFunction JacobiNC
 syntax keyword mmaFunction JacobiND
 syntax keyword mmaFunction JacobiNS
@@ -2889,6 +3012,7 @@ syntax keyword mmaFunction JacobiSC
 syntax keyword mmaFunction JacobiSD
 syntax keyword mmaFunction JacobiSN
 syntax keyword mmaFunction JacobiSymbol
+syntax keyword mmaFunction JacobiZN
 syntax keyword mmaFunction JacobiZeta
 syntax keyword mmaFunction JankoGroupJ1
 syntax keyword mmaFunction JankoGroupJ2
@@ -2989,6 +3113,12 @@ syntax keyword mmaFunction LabelingSize
 syntax keyword mmaFunction LaguerreL
 syntax keyword mmaFunction LakeData
 syntax keyword mmaFunction LambdaComponents
+syntax keyword mmaFunction LameC
+syntax keyword mmaFunction LameCPrime
+syntax keyword mmaFunction LameEigenvalueA
+syntax keyword mmaFunction LameEigenvalueB
+syntax keyword mmaFunction LameS
+syntax keyword mmaFunction LameSPrime
 syntax keyword mmaFunction LaminaData
 syntax keyword mmaFunction LanczosWindow
 syntax keyword mmaFunction LandauDistribution
@@ -3001,6 +3131,7 @@ syntax keyword mmaFunction LaplaceTransform
 syntax keyword mmaFunction Laplacian
 syntax keyword mmaFunction LaplacianFilter
 syntax keyword mmaFunction LaplacianGaussianFilter
+syntax keyword mmaFunction LaplacianPDETerm
 syntax keyword mmaFunction Large
 syntax keyword mmaFunction Larger
 syntax keyword mmaFunction Last
@@ -3013,6 +3144,7 @@ syntax keyword mmaFunction LayerSizeFunction
 syntax keyword mmaFunction LayeredGraphPlot
 syntax keyword mmaFunction LeaderSize
 syntax keyword mmaFunction LeafCount
+syntax keyword mmaFunction LeapVariant
 syntax keyword mmaFunction LeapYearQ
 syntax keyword mmaFunction LearnDistribution
 syntax keyword mmaFunction LearnedDistribution
@@ -3080,6 +3212,9 @@ syntax keyword mmaFunction LibraryFunctionLoad
 syntax keyword mmaFunction LibraryFunctionUnload
 syntax keyword mmaFunction LibraryLoad
 syntax keyword mmaFunction LibraryUnload
+syntax keyword mmaFunction LicenseEntitlementObject
+syntax keyword mmaFunction LicenseEntitlements
+syntax keyword mmaFunction LicensingSettings
 syntax keyword mmaFunction LiftingFilterData
 syntax keyword mmaFunction LiftingWaveletTransform
 syntax keyword mmaFunction LightBlue
@@ -3111,6 +3246,7 @@ syntax keyword mmaFunction LineLegend
 syntax keyword mmaFunction LineSpacing
 syntax keyword mmaFunction LinearFractionalOptimization
 syntax keyword mmaFunction LinearFractionalTransform
+syntax keyword mmaFunction LinearGradientFilling
 syntax keyword mmaFunction LinearGradientImage
 syntax keyword mmaFunction LinearLayer
 syntax keyword mmaFunction LinearModelFit
@@ -3287,9 +3423,17 @@ syntax keyword mmaFunction MardiaSkewnessTest
 syntax keyword mmaFunction MarginalDistribution
 syntax keyword mmaFunction MarkovProcessProperties
 syntax keyword mmaFunction Masking
+syntax keyword mmaFunction MassConcentrationCondition
+syntax keyword mmaFunction MassFluxValue
+syntax keyword mmaFunction MassImpermeableBoundaryValue
+syntax keyword mmaFunction MassOutflowValue
+syntax keyword mmaFunction MassSymmetryValue
+syntax keyword mmaFunction MassTransferValue
+syntax keyword mmaFunction MassTransportPDEComponent
 syntax keyword mmaFunction MatchLocalNames
 syntax keyword mmaFunction MatchQ
 syntax keyword mmaFunction MatchingDissimilarity
+syntax keyword mmaFunction MaternPointProcess
 syntax keyword mmaFunction MathMLForm
 syntax keyword mmaFunction MathematicalFunctionData
 syntax keyword mmaFunction MathieuC
@@ -3355,6 +3499,7 @@ syntax keyword mmaFunction MeanDeviation
 syntax keyword mmaFunction MeanFilter
 syntax keyword mmaFunction MeanGraphDistance
 syntax keyword mmaFunction MeanNeighborDegree
+syntax keyword mmaFunction MeanPointDensity
 syntax keyword mmaFunction MeanShift
 syntax keyword mmaFunction MeanShiftFilter
 syntax keyword mmaFunction MeanSquaredLossLayer
@@ -3463,6 +3608,7 @@ syntax keyword mmaFunction Modulus
 syntax keyword mmaFunction MoebiusMu
 syntax keyword mmaFunction Molecule
 syntax keyword mmaFunction MoleculeContainsQ
+syntax keyword mmaFunction MoleculeDraw
 syntax keyword mmaFunction MoleculeEquivalentQ
 syntax keyword mmaFunction MoleculeGraph
 syntax keyword mmaFunction MoleculeModify
@@ -3547,6 +3693,7 @@ syntax keyword mmaFunction Nand
 syntax keyword mmaFunction Nearest
 syntax keyword mmaFunction NearestFunction
 syntax keyword mmaFunction NearestMeshCells
+syntax keyword mmaFunction NearestNeighborG
 syntax keyword mmaFunction NearestNeighborGraph
 syntax keyword mmaFunction NearestTo
 syntax keyword mmaFunction NebulaData
@@ -3560,6 +3707,7 @@ syntax keyword mmaFunction NegativeMultinomialDistribution
 syntax keyword mmaFunction NegativeRationals
 syntax keyword mmaFunction NegativeReals
 syntax keyword mmaFunction NegativeSemidefiniteMatrixQ
+syntax keyword mmaFunction NegativelyOrientedPoints
 syntax keyword mmaFunction NeighborhoodData
 syntax keyword mmaFunction NeighborhoodGraph
 syntax keyword mmaFunction Nest
@@ -3570,6 +3718,8 @@ syntax keyword mmaFunction NestWhileList
 syntax keyword mmaFunction NestedGreaterGreater
 syntax keyword mmaFunction NestedLessLess
 syntax keyword mmaFunction NetAppend
+syntax keyword mmaFunction NetArray
+syntax keyword mmaFunction NetArrayLayer
 syntax keyword mmaFunction NetBidirectionalOperator
 syntax keyword mmaFunction NetChain
 syntax keyword mmaFunction NetDecoder
@@ -3598,7 +3748,6 @@ syntax keyword mmaFunction NetPrepend
 syntax keyword mmaFunction NetRename
 syntax keyword mmaFunction NetReplace
 syntax keyword mmaFunction NetReplacePart
-syntax keyword mmaFunction NetSharedArray
 syntax keyword mmaFunction NetStateObject
 syntax keyword mmaFunction NetTake
 syntax keyword mmaFunction NetTrain
@@ -3614,6 +3763,7 @@ syntax keyword mmaFunction NevilleThetaS
 syntax keyword mmaFunction NextCell
 syntax keyword mmaFunction NextDate
 syntax keyword mmaFunction NextPrime
+syntax keyword mmaFunction NeymanScottPointProcess
 syntax keyword mmaFunction NicholsGridLines
 syntax keyword mmaFunction NicholsPlot
 syntax keyword mmaFunction NightHemisphere
@@ -3827,6 +3977,7 @@ syntax keyword mmaFunction OutputControllabilityMatrix
 syntax keyword mmaFunction OutputControllableModelQ
 syntax keyword mmaFunction OutputForm
 syntax keyword mmaFunction OutputNamePacket
+syntax keyword mmaFunction OutputPorts
 syntax keyword mmaFunction OutputResponse
 syntax keyword mmaFunction OutputSizeLimit
 syntax keyword mmaFunction OutputStream
@@ -3884,6 +4035,7 @@ syntax keyword mmaFunction PageRankCentrality
 syntax keyword mmaFunction PageTheme
 syntax keyword mmaFunction PageWidth
 syntax keyword mmaFunction Pagination
+syntax keyword mmaFunction PairCorrelationG
 syntax keyword mmaFunction PairedBarChart
 syntax keyword mmaFunction PairedHistogram
 syntax keyword mmaFunction PairedSmoothHistogram
@@ -3899,6 +4051,7 @@ syntax keyword mmaFunction ParabolicCylinderD
 syntax keyword mmaFunction ParagraphIndent
 syntax keyword mmaFunction ParagraphSpacing
 syntax keyword mmaFunction ParallelArray
+syntax keyword mmaFunction ParallelAxisPlot
 syntax keyword mmaFunction ParallelCombine
 syntax keyword mmaFunction ParallelDo
 syntax keyword mmaFunction ParallelEvaluate
@@ -3915,6 +4068,7 @@ syntax keyword mmaFunction Parallelize
 syntax keyword mmaFunction Parallelogram
 syntax keyword mmaFunction ParameterEstimator
 syntax keyword mmaFunction ParameterMixtureDistribution
+syntax keyword mmaFunction ParametricConvexOptimization
 syntax keyword mmaFunction ParametricFunction
 syntax keyword mmaFunction ParametricNDSolve
 syntax keyword mmaFunction ParametricNDSolveValue
@@ -3962,6 +4116,7 @@ syntax keyword mmaFunction PeanoCurve
 syntax keyword mmaFunction PearsonChiSquareTest
 syntax keyword mmaFunction PearsonCorrelationTest
 syntax keyword mmaFunction PearsonDistribution
+syntax keyword mmaFunction PenttinenPointProcess
 syntax keyword mmaFunction PercentForm
 syntax keyword mmaFunction PerfectNumber
 syntax keyword mmaFunction PerfectNumberQ
@@ -3973,6 +4128,7 @@ syntax keyword mmaFunction PeriodogramArray
 syntax keyword mmaFunction Permanent
 syntax keyword mmaFunction Permissions
 syntax keyword mmaFunction PermissionsGroup
+syntax keyword mmaFunction PermissionsGroupMemberQ
 syntax keyword mmaFunction PermissionsGroups
 syntax keyword mmaFunction PermissionsKey
 syntax keyword mmaFunction PermissionsKeys
@@ -4018,6 +4174,7 @@ syntax keyword mmaFunction PixelValue
 syntax keyword mmaFunction PixelValuePositions
 syntax keyword mmaFunction Placed
 syntax keyword mmaFunction Placeholder
+syntax keyword mmaFunction PlaceholderLayer
 syntax keyword mmaFunction PlaceholderReplace
 syntax keyword mmaFunction Plain
 syntax keyword mmaFunction PlanarAngle
@@ -4051,11 +4208,22 @@ syntax keyword mmaFunction Pochhammer
 syntax keyword mmaFunction PodStates
 syntax keyword mmaFunction PodWidth
 syntax keyword mmaFunction Point
+syntax keyword mmaFunction PointCountDistribution
+syntax keyword mmaFunction PointDensity
+syntax keyword mmaFunction PointDensityFunction
 syntax keyword mmaFunction PointFigureChart
 syntax keyword mmaFunction PointLegend
+syntax keyword mmaFunction PointProcessEstimator
+syntax keyword mmaFunction PointProcessFitTest
+syntax keyword mmaFunction PointProcessParameterAssumptions
+syntax keyword mmaFunction PointProcessParameterQ
 syntax keyword mmaFunction PointSize
+syntax keyword mmaFunction PointStatisticFunction
+syntax keyword mmaFunction PointValuePlot
 syntax keyword mmaFunction PoissonConsulDistribution
 syntax keyword mmaFunction PoissonDistribution
+syntax keyword mmaFunction PoissonPDEComponent
+syntax keyword mmaFunction PoissonPointProcess
 syntax keyword mmaFunction PoissonProcess
 syntax keyword mmaFunction PoissonWindow
 syntax keyword mmaFunction PolarAxes
@@ -4078,6 +4246,7 @@ syntax keyword mmaFunction PolyhedronCoordinates
 syntax keyword mmaFunction PolyhedronData
 syntax keyword mmaFunction PolyhedronDecomposition
 syntax keyword mmaFunction PolyhedronGenus
+syntax keyword mmaFunction PolynomialExpressionQ
 syntax keyword mmaFunction PolynomialExtendedGCD
 syntax keyword mmaFunction PolynomialGCD
 syntax keyword mmaFunction PolynomialLCM
@@ -4099,6 +4268,7 @@ syntax keyword mmaFunction PositiveIntegers
 syntax keyword mmaFunction PositiveRationals
 syntax keyword mmaFunction PositiveReals
 syntax keyword mmaFunction PositiveSemidefiniteMatrixQ
+syntax keyword mmaFunction PositivelyOrientedPoints
 syntax keyword mmaFunction PossibleZeroQ
 syntax keyword mmaFunction Postfix
 syntax keyword mmaFunction Power
@@ -4229,12 +4399,15 @@ syntax keyword mmaFunction QueueProperties
 syntax keyword mmaFunction QueueingNetworkProcess
 syntax keyword mmaFunction QueueingProcess
 syntax keyword mmaFunction Quiet
+syntax keyword mmaFunction QuietEcho
 syntax keyword mmaFunction Quit
 syntax keyword mmaFunction Quotient
 syntax keyword mmaFunction QuotientRemainder
 syntax keyword mmaFunction RGBColor
 syntax keyword mmaFunction RSolve
 syntax keyword mmaFunction RSolveValue
+syntax keyword mmaFunction RadialAxisPlot
+syntax keyword mmaFunction RadialGradientFilling
 syntax keyword mmaFunction RadialGradientImage
 syntax keyword mmaFunction RadialityCentrality
 syntax keyword mmaFunction RadicalBox
@@ -4248,11 +4421,13 @@ syntax keyword mmaFunction RamanujanTauL
 syntax keyword mmaFunction RamanujanTauTheta
 syntax keyword mmaFunction RamanujanTauZ
 syntax keyword mmaFunction Ramp
+syntax keyword mmaFunction RandomArrayLayer
 syntax keyword mmaFunction RandomChoice
 syntax keyword mmaFunction RandomColor
 syntax keyword mmaFunction RandomComplex
 syntax keyword mmaFunction RandomEntity
 syntax keyword mmaFunction RandomFunction
+syntax keyword mmaFunction RandomGeneratorState
 syntax keyword mmaFunction RandomGeoPosition
 syntax keyword mmaFunction RandomGraph
 syntax keyword mmaFunction RandomImage
@@ -4260,6 +4435,7 @@ syntax keyword mmaFunction RandomInstance
 syntax keyword mmaFunction RandomInteger
 syntax keyword mmaFunction RandomPermutation
 syntax keyword mmaFunction RandomPoint
+syntax keyword mmaFunction RandomPointConfiguration
 syntax keyword mmaFunction RandomPolygon
 syntax keyword mmaFunction RandomPolyhedron
 syntax keyword mmaFunction RandomPrime
@@ -4279,6 +4455,7 @@ syntax keyword mmaFunction Raster3D
 syntax keyword mmaFunction RasterSize
 syntax keyword mmaFunction Rasterize
 syntax keyword mmaFunction Rational
+syntax keyword mmaFunction RationalExpressionQ
 syntax keyword mmaFunction Rationalize
 syntax keyword mmaFunction Rationals
 syntax keyword mmaFunction Ratios
@@ -4290,6 +4467,7 @@ syntax keyword mmaFunction ReIm
 syntax keyword mmaFunction ReImLabels
 syntax keyword mmaFunction ReImPlot
 syntax keyword mmaFunction ReImStyle
+syntax keyword mmaFunction ReactionPDETerm
 syntax keyword mmaFunction Read
 syntax keyword mmaFunction ReadByteArray
 syntax keyword mmaFunction ReadLine
@@ -4366,11 +4544,22 @@ syntax keyword mmaFunction ReliabilityDistribution
 syntax keyword mmaFunction ReliefImage
 syntax keyword mmaFunction ReliefPlot
 syntax keyword mmaFunction RemoteAuthorizationCaching
+syntax keyword mmaFunction RemoteBatchJobAbort
+syntax keyword mmaFunction RemoteBatchJobObject
+syntax keyword mmaFunction RemoteBatchJobs
+syntax keyword mmaFunction RemoteBatchMapSubmit
+syntax keyword mmaFunction RemoteBatchSubmissionEnvironment
+syntax keyword mmaFunction RemoteBatchSubmit
 syntax keyword mmaFunction RemoteConnect
 syntax keyword mmaFunction RemoteConnectionObject
+syntax keyword mmaFunction RemoteEvaluate
 syntax keyword mmaFunction RemoteFile
+syntax keyword mmaFunction RemoteInputFiles
+syntax keyword mmaFunction RemoteKernelObject
+syntax keyword mmaFunction RemoteProviderSettings
 syntax keyword mmaFunction RemoteRun
 syntax keyword mmaFunction RemoteRunProcess
+syntax keyword mmaFunction RemovalConditions
 syntax keyword mmaFunction Remove
 syntax keyword mmaFunction RemoveAlphaChannel
 syntax keyword mmaFunction RemoveAudioStream
@@ -4472,8 +4661,11 @@ syntax keyword mmaFunction RightUpVector
 syntax keyword mmaFunction RightUpVectorBar
 syntax keyword mmaFunction RightVector
 syntax keyword mmaFunction RightVectorBar
+syntax keyword mmaFunction RipleyK
+syntax keyword mmaFunction RipleyRassonRegion
 syntax keyword mmaFunction RiskAchievementImportance
 syntax keyword mmaFunction RiskReductionImportance
+syntax keyword mmaFunction RobustConvexOptimization
 syntax keyword mmaFunction RogersTanimotoDissimilarity
 syntax keyword mmaFunction RollPitchYawAngles
 syntax keyword mmaFunction RollPitchYawMatrix
@@ -4580,6 +4772,7 @@ syntax keyword mmaFunction SectorOrigin
 syntax keyword mmaFunction SectorSpacing
 syntax keyword mmaFunction SecuredAuthenticationKey
 syntax keyword mmaFunction SecuredAuthenticationKeys
+syntax keyword mmaFunction SecurityCertificate
 syntax keyword mmaFunction SeedRandom
 syntax keyword mmaFunction Select
 syntax keyword mmaFunction SelectComponents
@@ -4739,6 +4932,7 @@ syntax keyword mmaFunction SmoothDensityHistogram
 syntax keyword mmaFunction SmoothHistogram
 syntax keyword mmaFunction SmoothHistogram3D
 syntax keyword mmaFunction SmoothKernelDistribution
+syntax keyword mmaFunction SmoothPointDensity
 syntax keyword mmaFunction SnDispersion
 syntax keyword mmaFunction Snippet
 syntax keyword mmaFunction SnubPolyhedron
@@ -4770,6 +4964,7 @@ syntax keyword mmaFunction Sound
 syntax keyword mmaFunction SoundNote
 syntax keyword mmaFunction SoundVolume
 syntax keyword mmaFunction SourceLink
+syntax keyword mmaFunction SourcePDETerm
 syntax keyword mmaFunction Sow
 syntax keyword mmaFunction SpaceCurveData
 syntax keyword mmaFunction Spacer
@@ -4779,8 +4974,15 @@ syntax keyword mmaFunction SpanFromAbove
 syntax keyword mmaFunction SpanFromBoth
 syntax keyword mmaFunction SpanFromLeft
 syntax keyword mmaFunction SparseArray
+syntax keyword mmaFunction SpatialBinnedPointData
+syntax keyword mmaFunction SpatialBoundaryCorrection
 syntax keyword mmaFunction SpatialGraphDistribution
+syntax keyword mmaFunction SpatialJ
 syntax keyword mmaFunction SpatialMedian
+syntax keyword mmaFunction SpatialObservationRegionQ
+syntax keyword mmaFunction SpatialPointData
+syntax keyword mmaFunction SpatialPointSelect
+syntax keyword mmaFunction SpatialRandomnessTest
 syntax keyword mmaFunction SpatialTransformationLayer
 syntax keyword mmaFunction Speak
 syntax keyword mmaFunction SpeakerMatchQ
@@ -4894,6 +5096,8 @@ syntax keyword mmaFunction StirlingS2
 syntax keyword mmaFunction StoppingPowerData
 syntax keyword mmaFunction StrataVariables
 syntax keyword mmaFunction StratonovichProcess
+syntax keyword mmaFunction StraussHardcorePointProcess
+syntax keyword mmaFunction StraussPointProcess
 syntax keyword mmaFunction StreamColorFunction
 syntax keyword mmaFunction StreamColorFunctionScaling
 syntax keyword mmaFunction StreamDensityPlot
@@ -4904,6 +5108,7 @@ syntax keyword mmaFunction StreamPosition
 syntax keyword mmaFunction StreamScale
 syntax keyword mmaFunction StreamStyle
 syntax keyword mmaFunction Streams
+syntax keyword mmaFunction StrictInequalities
 syntax keyword mmaFunction String
 syntax keyword mmaFunction StringCases
 syntax keyword mmaFunction StringContainsQ
@@ -4915,6 +5120,7 @@ syntax keyword mmaFunction StringExpression
 syntax keyword mmaFunction StringExtract
 syntax keyword mmaFunction StringForm
 syntax keyword mmaFunction StringFormat
+syntax keyword mmaFunction StringFormatQ
 syntax keyword mmaFunction StringFreeQ
 syntax keyword mmaFunction StringInsert
 syntax keyword mmaFunction StringJoin
@@ -4982,7 +5188,7 @@ syntax keyword mmaFunction Subsuperscript
 syntax keyword mmaFunction SubsuperscriptBox
 syntax keyword mmaFunction SubsuperscriptBoxOptions
 syntax keyword mmaFunction SubtitleEncoding
-syntax keyword mmaFunction SubtitleTracks
+syntax keyword mmaFunction SubtitleTrackSelection
 syntax keyword mmaFunction Subtract
 syntax keyword mmaFunction SubtractFrom
 syntax keyword mmaFunction SubtractSides
@@ -5182,6 +5388,7 @@ syntax keyword mmaFunction Thick
 syntax keyword mmaFunction Thickness
 syntax keyword mmaFunction Thin
 syntax keyword mmaFunction Thinning
+syntax keyword mmaFunction ThomasPointProcess
 syntax keyword mmaFunction ThompsonGroupTh
 syntax keyword mmaFunction Thread
 syntax keyword mmaFunction ThreadingLayer
@@ -5458,6 +5665,7 @@ syntax keyword mmaFunction Upsample
 syntax keyword mmaFunction UsingFrontEnd
 syntax keyword mmaFunction UtilityFunction
 syntax keyword mmaFunction ValenceErrorHandling
+syntax keyword mmaFunction ValenceFilling
 syntax keyword mmaFunction ValidationLength
 syntax keyword mmaFunction ValidationSet
 syntax keyword mmaFunction ValueDimensions
@@ -5469,6 +5677,7 @@ syntax keyword mmaFunction Variance
 syntax keyword mmaFunction VarianceEquivalenceTest
 syntax keyword mmaFunction VarianceEstimatorFunction
 syntax keyword mmaFunction VarianceGammaDistribution
+syntax keyword mmaFunction VarianceGammaPointProcess
 syntax keyword mmaFunction VarianceTest
 syntax keyword mmaFunction VectorAngle
 syntax keyword mmaFunction VectorAround
@@ -5543,18 +5752,27 @@ syntax keyword mmaFunction VerticalSeparator
 syntax keyword mmaFunction VerticalSlider
 syntax keyword mmaFunction VerticalTilde
 syntax keyword mmaFunction Video
+syntax keyword mmaFunction VideoCombine
+syntax keyword mmaFunction VideoDelete
 syntax keyword mmaFunction VideoEncoding
 syntax keyword mmaFunction VideoExtractFrames
 syntax keyword mmaFunction VideoFrameList
 syntax keyword mmaFunction VideoFrameMap
+syntax keyword mmaFunction VideoGenerator
+syntax keyword mmaFunction VideoIntervals
+syntax keyword mmaFunction VideoJoin
+syntax keyword mmaFunction VideoMap
+syntax keyword mmaFunction VideoMapList
+syntax keyword mmaFunction VideoMapTimeSeries
 syntax keyword mmaFunction VideoPause
 syntax keyword mmaFunction VideoPlay
 syntax keyword mmaFunction VideoQ
+syntax keyword mmaFunction VideoSplit
 syntax keyword mmaFunction VideoStop
 syntax keyword mmaFunction VideoStream
 syntax keyword mmaFunction VideoStreams
-syntax keyword mmaFunction VideoTimeSeries
-syntax keyword mmaFunction VideoTracks
+syntax keyword mmaFunction VideoTrackSelection
+syntax keyword mmaFunction VideoTranscode
 syntax keyword mmaFunction VideoTrim
 syntax keyword mmaFunction ViewAngle
 syntax keyword mmaFunction ViewCenter
@@ -5581,6 +5799,7 @@ syntax keyword mmaFunction WarpingDistance
 syntax keyword mmaFunction WatershedComponents
 syntax keyword mmaFunction WatsonUSquareTest
 syntax keyword mmaFunction WattsStrogatzGraphDistribution
+syntax keyword mmaFunction WavePDEComponent
 syntax keyword mmaFunction WaveletBestBasis
 syntax keyword mmaFunction WaveletFilterCoefficients
 syntax keyword mmaFunction WaveletImagePlot
@@ -5675,6 +5894,7 @@ syntax keyword mmaFunction WinsorizedMean
 syntax keyword mmaFunction WinsorizedVariance
 syntax keyword mmaFunction WishartMatrixDistribution
 syntax keyword mmaFunction With
+syntax keyword mmaFunction WithCleanup
 syntax keyword mmaFunction WolframAlpha
 syntax keyword mmaFunction WolframLanguageData
 syntax keyword mmaFunction Word
